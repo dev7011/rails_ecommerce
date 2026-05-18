@@ -9,4 +9,4 @@
 #   end
 
 
-Admin.create(email: "admin@gmail.com", password: "password", password_confirmation: "password")
+Admin.create(email: "tnle7011@gmail.com", password: "123456", password_confirmation: "123456")

@@ -6,15 +6,33 @@
     <p class="mt-4 text-lg text-gray-600">
       Build and grow your online store with a fast, modern Rails foundation.
     </p>
-
     <div class="mt-8 flex items-center justify-center gap-3">
       <a href="#" class="inline-flex items-center rounded-lg bg-red-700 px-5 py-3 text-white font-medium hover:bg-red-800 transition">
         <%= icon("fa-brands", "font-awesome") %>
         <span class="text-blue-900 ml-5">Start Shopping</span>
       </a>
-      <a href="#" class="inline-flex items-center rounded-lg border border-gray-300 px-5 py-3 text-gray-700 font-medium hover:bg-gray-50 transition">
-        Learn More
-      </a>
+
+      <% if admin_signed_in? %>
+          <div class="inline-flex items-center rounded-lg border border-blue-300 px-5 py-3 text-gray-700 font-medium hover:bg-gray-50 transition">
+            <%= link_to "Admin Dashboard",
+              admin_root_path,
+              class: "text-blue-900 ml-5"
+            %>
+          </div>
+          <div class="inline-flex items-center rounded-lg border border-blue-300 px-5 py-3 text-gray-700 font-medium hover:bg-gray-50 transition">
+            <%= button_to "Admin Logout",
+               destroy_admin_session_path,
+               method: :delete
+            %>
+          </div>
+      <% else %>
+          <div class="inline-flex items-center rounded-lg border border-blue-300 px-5 py-3 text-gray-700 font-medium hover:bg-gray-50 transition">
+            <%= button_to "Admin Login",
+              new_admin_session_path,
+              class: "text-blue-900 ml-5"
+            %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
