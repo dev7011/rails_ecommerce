@@ -9,6 +9,7 @@
 
 
 ♦️2. STEP DEVISE
+
     gem "devise", "~> 5.0"
     bundle install
     rails generate devise:install
@@ -19,3 +20,9 @@
     rails generate devise Admin
     rails db:migrate
 
+♦️ 4. STEP Konfiguration von Devise 
+    
+    👉 in app/controllers/application_controller.rb
+        before_action :authenticate_user!
+    👉 in config/environments/development.rb
+        config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
