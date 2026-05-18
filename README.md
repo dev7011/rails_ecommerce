@@ -14,3 +14,8 @@
     rails generate devise:install
 
 
+♦️3. STEP DEVISE-MODEL GENERIEREN
+
+    rails generate devise Admin
+    rails db:migrate
+
