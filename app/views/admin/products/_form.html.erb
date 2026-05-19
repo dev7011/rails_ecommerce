@@ -28,12 +28,8 @@
       <% end %>
     <% end %>
 
-    <%= form.label :images%>
-    <div class="mt-2 w-full rounded-md border border-gray-200 shadow px-3 py-2">
-      <%= form.file_field :images,
-                          multiple: true,
-                          class: "block w-full" %>
-    </div>
+    <%= file_upload_field(form, :images, multiple: true) %>
+
   </div>
 
   <div class="my-5">

@@ -22,10 +22,7 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :image %>
-    <%= form.file_field :image,
-                        accept: "image/jpeg, image/png, image/gif, image/jpag ",
-                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= file_upload_field(form, :image, multiple: false, accept: "image/*") %>
   </div>
 
   <div class="inline">
