@@ -8,5 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+if Admin.count.zero?
+  Admin.create(email: "tnle7011@gmail.com", password: "123456", password_confirmation: "123456")
+end
 
-Admin.create(email: "tnle7011@gmail.com", password: "123456", password_confirmation: "123456")
+
+(1..10).each do |i|
+  Category.create(
+    name: "#{Faker::Commerce.department} #{i}",
+    description: Faker::Lorem.sentence
+  )
+end
