@@ -26,3 +26,12 @@
         before_action :authenticate_user!
     👉 in config/environments/development.rb
         config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+
+
+♦️ Models hinzufügen
+    rails g scaffold admin::category name:string description:text
+    
+    
+    
