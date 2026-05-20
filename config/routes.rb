@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
+  devise_for :admins
+
+  authenticated :admin do
+    root to: "admin#index", as: :admin_root
+  end
+
+  unauthenticated do
+    root "home#index"
+  end
+
   namespace :admin do
-    resources :stocks
     resources :products
     resources :categories
+    # resources :stocks
   end
 
-  devise_for :admins
-  get 'home/index'
-
-  authenticated :admins do
-    root to: 'admin#index', as: :admin_root
-  end
-
-  root 'home#index'
-
-  get 'admin' => 'admin#index'
+  get "home/index"
+  get "admin" => "admin#index"
 end
