@@ -78,3 +78,7 @@ gem "font-awesome-sass", "~> 6.5.1"
 gem "devise", "~> 5.0"
 
 gem "image_processing"
+
+# Temporarily pin psych to 4.x to avoid ARM64 segfault issues
+gem "psych", "~> 4.0.0"
+

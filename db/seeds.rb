@@ -13,9 +13,20 @@ if Admin.count.zero?
 end
 
 
+
 (1..10).each do |i|
   Category.create(
     name: "#{Faker::Commerce.department} #{i}",
     description: Faker::Lorem.sentence
+  )
+end
+
+
+(1..50).each do |i|
+  Product.create(
+    name: "#{Faker::Commerce.department} #{i}",
+    description: Faker::Lorem.sentence,
+    price: Faker::Commerce.price(range: 10..100.0),
+    category: Category.all.sample
   )
 end

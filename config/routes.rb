@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :products
+    resources :products do
+      resources :stocks, only: %i[index new create edit update destroy]
+    end
     resources :categories
-    # resources :stocks
+    resources :stocks
   end
 
   get "home/index"

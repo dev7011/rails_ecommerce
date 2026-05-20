@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   end
 
   belongs_to :category
+  has_many :stocks
 
   validates :name, presence: true
   validates :price, presence: true

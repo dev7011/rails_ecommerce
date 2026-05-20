@@ -50,4 +50,13 @@ module FormHelper
     end
   end
 
+  def collection_select_field(form, attribute, collection)
+    css_class = "block shadow rounded-md border border-gray-200 outline px-3 py-2 mt-2 w-full"
+    content_tag(:div, class: "my-5") do
+      safe_join([
+          form.label(attribute),
+          form.collection_select(attribute, collection, :id, :name, { }, { class: css_class})
+        ])
+    end
+  end
 end

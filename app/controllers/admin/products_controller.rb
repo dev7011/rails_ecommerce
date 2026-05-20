@@ -43,10 +43,8 @@ class Admin::ProductsController < AdminController
   def update
     @admin_product = Product.find(params[:id])
     if @admin_product.update(admin_product_params.reject { |k| k["images"] })
-      if admin_product_params["images"]
-        admin_product_params["images"].each do |image|
-          @admin_product.images.attach(image)
-        end
+      admin_product_params["images"]&.each do |image|
+        @admin_product.images.attach(image)
       end
       redirect_to admin_products_path, notice: "Product updated successfully"
     else
