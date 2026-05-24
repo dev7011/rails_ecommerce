@@ -6,4 +6,9 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+import DropDragController from "./drag_controller"
+application.register("drag", DropDragController)
+
+
 export { application }
+

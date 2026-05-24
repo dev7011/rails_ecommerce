@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products do
+      member do
+        patch :reorder
+      end
       resources :stocks, only: %i[index new create edit update destroy]
     end
     resources :categories

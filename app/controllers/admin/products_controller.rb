@@ -8,7 +8,7 @@ class Admin::ProductsController < AdminController
     # else
     #   @pagy, @admin_products = pagy(Product.all)
     # end
-    @admin_products = Product.all
+    @admin_products = Product.order(:position, :id)
   end
 
   # GET /admin/products/1 or /admin/products/1.json
@@ -62,6 +62,26 @@ class Admin::ProductsController < AdminController
     end
   end
 
+  def reorder
+    product = Product.find(params[:id])
+    requested_position = params.require(:position).to_i
+
+    products = Product.order(:position, :id).to_a
+    products.delete(product)
+
+    bounded_position = requested_position.clamp(1, products.length + 1)
+    products.insert(bounded_position - 1, product)
+
+    Product.transaction do
+      products.each_with_index do |item, index|
+        item.update_columns(position: index + 1, updated_at: Time.current)
+      end
+    end
+
+    render json: { ok: true }
+  end
+
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_admin_product
@@ -70,6 +90,13 @@ class Admin::ProductsController < AdminController
 
   # Only allow a list of trusted parameters through.
   def admin_product_params
-    params.require(:product).permit(:name, :description, :price, :category_id, :active, images: [])
+    params.require(:product).permit(
+      :name,
+      :description,
+      :price,
+      :category_id,
+      :active,
+      :position,
+      images: [])
   end
 end
