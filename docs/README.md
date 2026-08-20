@@ -15,6 +15,8 @@
     gem "devise", "~> 5.0"
     bundle install
     rails generate devise:install
+    rails generate devise:views
+    rails generate devise:views  
 
 
 ♦️3. STEP DEVISE-MODEL GENERIEREN
