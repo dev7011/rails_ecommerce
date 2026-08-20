@@ -1,27 +1,38 @@
 @layer components {
   .btn {
-    @apply rounded-[3px]
+    @apply w-auto
+    align-middle
+    !inline-flex
+    rounded-[5px]
     mb-2.5!
-    bg-blue-600
     text-lg
     sm:text-lg
     px-4
     py-2
-    font-semibold
-    text-white;
+
+    text-white
+    cursor-pointer
+    font-medium
+    transition
+    focus:outline-none
+    focus:ring-4
+    focus:ring-blue-200
+    active:scale-[0.99]
   }
 
   .btn-primary {
-    @apply w-full
-      block
-      text-center
-      cursor-pointer
-      font-medium
-      transition
+    @apply bg-blue-600
     hover:bg-blue-700
-      focus:outline-none
-      focus:ring-4
-      focus:ring-blue-200
-      active:scale-[0.99];
+  }
+
+  .btn-warning {
+    @apply bg-amber-600
+    hover:bg-amber-700
+  }
+
+
+  .btn-danger {
+    @apply bg-red-600
+    hover:bg-red-700
   }
 }
