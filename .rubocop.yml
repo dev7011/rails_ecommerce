@@ -1,0 +1,5 @@
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
