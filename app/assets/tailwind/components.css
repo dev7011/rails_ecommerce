@@ -35,4 +35,39 @@
     @apply bg-red-600
     hover:bg-red-700
   }
+
+  .dashboard-container {
+    @apply flex
+    justify-between
+    flex-wrap
+    mt-8
+    w-full
+    items-center
+    max-w-4xl
+  }
+
+  .dashboard-item {
+    @apply w-[200px]
+    rounded
+    overflow-hidden
+    shadow-lg
+    bg-gradient-to-r
+    from-red-500
+    to-red-400
+  }
+
+  .input-field {
+    @apply w-full
+    rounded-[5px]
+    border-[1px]
+    border-gray-500
+    px-2 py-2
+    text-gray-900
+    outline-none
+    transition
+    placeholder:text-gray-500
+    focus:border-blue-500
+    focus:ring-4
+    focus:ring-blue-100
+  }
 }

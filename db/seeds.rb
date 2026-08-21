@@ -39,7 +39,8 @@ if Order.count.zero?
       address: Faker::Address.full_address,
       customer_email: Faker::Internet.email,
       total_amount: Faker::Number.number(digits: 4),
-      fulfilled: [true, false].sample
+      fulfilled: [true, false].sample,
+      created_at: rand(1.week.ago..Time.zone.now)
     )
 
     # Add random products to the order
