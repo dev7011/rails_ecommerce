@@ -82,3 +82,5 @@ gem "image_processing"
 # Temporarily pin psych to 4.x to avoid ARM64 segfault issues
 gem "psych", "~> 4.0.0"
 
+
+gem "view_component", "~> 4.12"

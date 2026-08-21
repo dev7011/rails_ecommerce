@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get "dashboard"
     resources :products do
       member do
         patch :reorder

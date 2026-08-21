@@ -345,6 +345,10 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
+    view_component (4.12.0)
+      actionview (>= 7.1.0)
+      activesupport (>= 7.1.0)
+      concurrent-ruby (~> 1)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -397,6 +401,7 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   tzinfo-data
+  view_component (~> 4.12)
   web-console
 
 CHECKSUMS
@@ -536,6 +541,7 @@ CHECKSUMS
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
   unicode-emoji (4.2.0) sha256=519e69150f75652e40bf736106cfbc8f0f73aa3fb6a65afe62fefa7f80b0f80f
+  view_component (4.12.0) sha256=b9a5979d1c43eba2aa21a06a86f661aab3990104855f2909ef7c3779acdcdcb4
   warden (1.2.9) sha256=46684f885d35a69dbb883deabf85a222c8e427a957804719e143005df7a1efd0
   web-console (4.2.1) sha256=e7bcf37a10ea2b4ec4281649d1cee461b32232d0a447e82c786e6841fd22fe20
   websocket (1.2.11) sha256=b7e7a74e2410b5e85c25858b26b3322f29161e300935f70a0e0d3c35e0462737
