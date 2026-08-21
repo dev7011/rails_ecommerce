@@ -5,3 +5,6 @@ application.register("hello", HelloController)
 
 import DragController from "controllers/drag_controller"
 application.register("drag", DragController)
+
+import DashboardController from "controllers/dashboard_controller"
+application.register("dashboard", DashboardController)
