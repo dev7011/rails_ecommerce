@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
     resources :categories
     resources :stocks
+    resources :orders
   end
 
   get "home/index"
