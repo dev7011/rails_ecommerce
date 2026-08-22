@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
+
+  resources :products, only: %i[index show]
+
   devise_for :admins
 
-  authenticated :admin do
-    root to: "admin#index", as: :admin_root
-  end
+  # authenticated :admin do
+  #   root to: "admin#index", as: :admin_root
+  # end
+  #
+  # unauthenticated do
+  #   root "home#index"
+  # end
 
-  unauthenticated do
-    root "home#index"
-  end
+  get "admin" => "admin#index", as: :admin_root
+  get "home/index"
+  root "home#index"
 
   namespace :admin do
     get "dashboard"
@@ -21,7 +28,4 @@ Rails.application.routes.draw do
     resources :stocks
     resources :orders
   end
-
-  get "home/index"
-  get "admin" => "admin#index"
 end
