@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :products, only: %i[index show]
 
   devise_for :admins
@@ -31,4 +30,7 @@ Rails.application.routes.draw do
     resources :stocks
     resources :orders
   end
+
+  get "cart/cart_list"
+  get "cart/checkout"
 end

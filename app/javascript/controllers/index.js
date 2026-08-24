@@ -11,3 +11,6 @@ application.register("dashboard", DashboardController)
 
 import AddToCartController from "controllers/add_to_cart_controller"
 application.register("add-to-cart", AddToCartController)
+
+import CartController from "controllers/cart_controller"
+application.register("cart", CartController)
