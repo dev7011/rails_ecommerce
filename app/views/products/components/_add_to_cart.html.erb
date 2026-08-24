@@ -1,0 +1,19 @@
+<div>
+  <% if product.stocks.any? %>
+    <div class="select-size-container flex gap-1 w-full items-center">
+      <% product.stocks.each do |stock| %>
+        <div
+          class="select-size flex py-1 px-2 rounded-[5px] items-center bg-gray-300 hover:bg-gray-500"> <%= stock.size %> </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div
+    data-add-to-cart-target ="selectedSize"
+    class="block text-amber-600 my-2">
+    Selected size: </div>
+
+  <button
+    class = "btn bg-gray-600 hover:bg-gray-700">
+    Add to Cart </button>
+</div>

@@ -2,22 +2,20 @@
   .btn {
     @apply w-auto
     align-middle
-    !inline-flex
+    inline-flex
+    items-center
     rounded-[5px]
-    mb-2.5!
     text-lg
     sm:text-lg
-    px-4
-    py-2
-
+    px-4 py-2
     text-white
     cursor-pointer
     font-medium
     transition
     focus:outline-none
     focus:ring-4
-    focus:ring-blue-200
     active:scale-[0.99]
+    justify-center
   }
 
   .btn-primary {

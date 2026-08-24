@@ -10,12 +10,11 @@
 
   <div class="w-full" data-controller="drag">
     <div class="grid grid-cols-4 gap-4 w-full">
-      <% @admin_products.each do |product| %>
-        <%= render "products/product_card", product: product  %>
+      <% @products.each do |product| %>
+        <%= render "product_card", product: product  %>
       <% end %>
     </div>
 
-    <%#== pagy_nav(@pagy) if @pagy.pages > 1 %>
   </div>
 
   <div class="mt-4">

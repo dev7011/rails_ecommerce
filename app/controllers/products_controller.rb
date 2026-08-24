@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :set_admin_product, only: %i[ show ]
+  before_action :set_admin_product, only: %i[ show buy_now ]
   def index
-    @admin_products = Product.order(:position, :id)
+    @products = Product.order(:position, :id)
+  end
+
+  def buy_now
+    @product = Product.find(params[:id])
   end
 
   def show; end
@@ -10,6 +14,6 @@ class ProductsController < ApplicationController
 
 
   def set_admin_product
-    @admin_product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 end

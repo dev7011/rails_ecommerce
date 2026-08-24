@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get "home/index"
   root "home#index"
 
+  resources :products, only: %i[index show ]
+  get "products/:id/buy_now", to: "products#buy_now", as: :buy_now_product
+
   namespace :admin do
     get "dashboard"
     resources :products do
