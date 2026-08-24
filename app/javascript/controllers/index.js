@@ -8,3 +8,6 @@ application.register("drag", DragController)
 
 import DashboardController from "controllers/dashboard_controller"
 application.register("dashboard", DashboardController)
+
+import AddToCartController from "controllers/add_to_cart_controller"
+application.register("add-to-cart", AddToCartController)
