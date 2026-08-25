@@ -84,3 +84,5 @@ gem "psych", "~> 4.0.0"
 
 
 gem "view_component", "~> 4.12"
+
+gem "stripe", "~> 19.5"
