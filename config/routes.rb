@@ -33,4 +33,8 @@ Rails.application.routes.draw do
 
   get "cart/cart_list"
   get "cart/checkout"
+
+  post "checkouts" => "checkouts#create", as: :checkouts
+  get "success" => "checkouts#success", as: :success
+  get "cancel" => "checkouts#cancel", as: :cancel
 end

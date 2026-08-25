@@ -8,8 +8,9 @@
 
   <div class="cart-actions">
     <button
-      class="btn btn-primary px-5 py-2 text-white rounded-md transition">
-      <%= link_to "checkout", cart_checkout_path %>
+      class="btn btn-primary px-5 py-2 text-white rounded-md transition"
+      data-action = "click->cart#checkout">
+      checkout
     </button>
 
     <button class="px-5 py-2 text-white rounded-md bg-gray-600 hover:bg-gray-700 transition"
