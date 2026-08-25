@@ -1,3 +1,5 @@
+https://docs.stripe.com/
+
 bundle add stripe
 
 # bearbeiten
@@ -16,3 +18,19 @@ stripe:
    123 Main St
    New York, NY 10001
    United States
+  
+
+♦️ Webhooks Controller
+Stripe
+│
+│ Zahlung erfolgreich
+▼
+POST /webhooks/stripe
+│
+▼
+Deine Rails App
+│
+├── Bestellung speichern
+├── Stock reduzieren
+├── Order auf "paid" setzen
+└── Bestätigungs-E-Mail senden

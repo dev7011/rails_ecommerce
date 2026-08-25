@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'webhooks/stripe'
   resources :products, only: %i[index show]
 
   devise_for :admins
@@ -31,10 +32,13 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+
   get "cart/cart_list"
   get "cart/checkout"
 
   post "checkouts" => "checkouts#create", as: :checkouts
   get "success" => "checkouts#success", as: :success
   get "cancel" => "checkouts#cancel", as: :cancel
+
+  post "webhooks" => "webhooks#stripe", as: :webhooks
 end
