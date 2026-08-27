@@ -1,6 +1,7 @@
 <div
   data-controller="add-to-cart"
   data-add-to-cart-product-value="<%= product.to_json %>"
+
   class="flex flex-col gap-2">
   <% if product.stocks.any? %>
     <div class="select-size-container flex gap-1 w-full items-center">
