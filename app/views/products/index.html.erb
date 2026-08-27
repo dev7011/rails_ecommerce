@@ -1,15 +1,14 @@
 <div class="w-full">
   <%= render "shared/notice" %>
-  <div class="w-full flex justify-center"
+  <%= render "shared/search_form" %>
+
+  <div class="w-full flex justify-center mt-5"
        data-controller="drag">
-    <div class="grid grid-cols-4 gap-5">
+    <div class="grid grid-cols-4 gap-4">
       <% @products.each do |product| %>
         <%= render "product_card", product: product  %>
       <% end %>
     </div>
   </div>
 
-  <div class="mt-4">
-    <%= link_to "Stock-liste", admin_stocks_path %>
-  </div>
 </div>
