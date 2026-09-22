@@ -21,8 +21,9 @@ test:
 
 production:
   <<: *default
-  host: <%= ENV.fetch("DB_HOST", "127.0.0.1") %>
-  port: <%= ENV.fetch("DB_PORT", 5432) %>
-  database: <%= ENV.fetch("DB_NAME", "rails_ecommerce_production") %>
-  username: <%= ENV.fetch("DB_USERNAME", "contur") %>
-  password: <%= ENV.fetch("DB_PASSWORD", "contura_123") %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV["DB_PORT"] %>
+  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
