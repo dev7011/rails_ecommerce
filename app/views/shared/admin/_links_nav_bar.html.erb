@@ -1,7 +1,7 @@
 <ul class="flex flex-col text-white">
-  <%= nav_item(home_index_url, icon_name: "gauge-high", label: "Dashboard") %>
-  <%= nav_item(home_index_url, icon_name: "cart-shopping", label: "Products") %>
-  <%= nav_item(home_index_url, icon_name: "list", label: "Categories") %>
-  <%= nav_item(home_index_url, icon_name: "truck-fast", label: "Orders") %>
-  <%= nav_item(home_index_url, icon_name: "sign-out", label: "Sign out", data: { "turbo-method": :delete, "turbo-confirm": "Are you sure you want to sign out?" }) %>
+  <%= nav_item(admin_dashboard_path, icon_name: "gauge-high", label: "Dashboard") %>
+  <%= nav_item(admin_products_path, icon_name: "cart-shopping", label: "Products") %>
+  <%= nav_item(admin_categories_path, icon_name: "list", label: "Categories") %>
+  <%= nav_item(admin_orders_path, icon_name: "truck-fast", label: "Orders") %>
+  <%= nav_item(destroy_admin_session_path, icon_name: "sign-out", label: "Sign out", data: { "turbo-method": :delete, "turbo-confirm": "Are you sure you want to sign out?" }) %>
 </ul>

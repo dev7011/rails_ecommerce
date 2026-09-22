@@ -50,16 +50,17 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "dotenv-rails", "~> 3.2"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
   gem "faker", "~> 3.8"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
-  gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -74,5 +75,15 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "devise", "~> 5.0"
 gem "font-awesome-sass", "~> 6.5.1"
+gem "devise", "~> 5.0"
+
+gem "image_processing"
+
+# Temporarily pin psych to 4.x to avoid ARM64 segfault issues
+gem "psych", "~> 4.0.0"
+
+
+gem "view_component", "~> 4.12"
+gem "stripe", "~> 19.5"
+gem 'pagy', '>= 9.1'

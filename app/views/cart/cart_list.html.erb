@@ -1,0 +1,23 @@
+<h1 class="text-4xl font-bold my-4">Cart-Page</h1>
+<div data-controller="cart">
+  <div
+    class="cart-list-container"
+    data-cart-target="cartList">
+    <!-- show cart content  -->
+  </div>
+
+  <div class="cart-actions">
+    <button
+      class="btn btn-primary px-5 py-2 text-white rounded-md transition"
+      data-action = "click->cart#checkout">
+      checkout
+    </button>
+
+    <button class="px-5 py-2 text-white rounded-md bg-gray-600 hover:bg-gray-700 transition"
+            data-action="click->cart#clearCart"
+            data-turbor-message="Are you sure you want to clear the cart?"
+    >
+      Clear Cart
+    </button>
+  </div>
+</div>

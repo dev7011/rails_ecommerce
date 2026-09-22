@@ -1,0 +1,36 @@
+<div class="flex justify-between flex-wrap mt-8 w-full items-center max-w-4xl">
+  <h2 class="text-2xl text-gray-800 font-medium mb-4">Daily Stats</h2>
+  <div class="grid grid-cols-4 gap-10">
+
+    <%= render Dashboard::ItemComponent.new(
+      title: "Revenue", value: @quick_stats[:sales],
+    ) %>
+
+    <%= render Dashboard::ItemComponent.new(
+      title: "Revenue", value: @quick_stats[:sales],
+      ) %>
+
+  </div>
+
+  <div data-controller="dashboard" class="mt-8 w-full max-w-4xl">
+    <button data-action="click->dashboard#addChart"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+      Add Chart</button>
+
+    <canvas id="chartBar"
+            data-dashboard-target="chart"
+            width="400" height="200">
+    </canvas>
+
+    <canvas id="chartDoughnut"
+            data-dashboard-target="chart"
+            width="400" height="400">
+    </canvas>
+
+    <canvas id="chartLine"
+            data-dashboard-target="chart"
+            width="400" height="400">
+    </canvas>
+  </div>
+
+</div>

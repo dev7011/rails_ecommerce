@@ -1,0 +1,9 @@
+<%= content_tag(:tr, class: "bg-gray-50 border-b draggable", draggable: true, data: {
+  controller: "drag",
+  action: "dragstart->drag#dragStart dragover->drag#dragOver drop->drag#drop dragend->drag#dragEnd",
+  resource_id: p.id,
+  url: reorder_admin_product_path(p),
+  parent: "drag_products"
+}) do %>
+  <%= render "product_row", p: p %>
+<% end %>

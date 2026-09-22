@@ -1,0 +1,13 @@
+<div class="w-full h-[50px]
+    py-5 px-2
+    my-2 flex items-center justify-start shadow-md/40 border border-gray-300 rounded-[5px]">
+
+  <%= form_with url: products_path, method: :get, class: "flex items-center" do |form| %>
+    <%= form.text_field :query,
+                         placeholder: "Search products...",
+                         class: "border border-gray-300 rounded px-4 py-2 mr-2" %>
+
+    <%= form.submit "Search",
+                     class: "bg-blue-500 text-white rounded px-4 py-2" %>
+  <% end %>
+</div>

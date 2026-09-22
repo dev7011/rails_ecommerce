@@ -21,8 +21,9 @@ test:
 
 production:
   <<: *default
-  host: <%= ENV["DB_HOST"] || "127.0.0.1" %>
-  port: <%= ENV["DB_PORT"] || 5432 %>
-  database: <%= ENV["DB_NAME"] || "production" %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV["DB_PORT"] %>
+  database: <%= ENV["DB_NAME"] %>
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>

@@ -1,0 +1,23 @@
+  <div class="flex w-full h-[50px] items-center
+    text-amber-500 font-bold justify-between items-center bg-gray-600 p-6">
+
+    <div class="navbar-main flex nav-logo gap-5">
+      <%= link_to "Home", home_index_path%>
+      <%= link_to "Products", products_path %>
+    </div>
+
+    <div class="nav-right flex flex-row gap-4">
+      <div>
+        <%= link_to "Cart <i class='fa-solid fa-cart-shopping'></i>".html_safe,
+                    cart_cart_list_path,
+                    class: "items-center gap-1" %>
+      </div>
+
+      <div>
+        <%= link_to "Admin",
+                    admin_dashboard_path,
+                    class: "items-center gap-1" %>
+      </div>
+    </div>
+
+  </div>

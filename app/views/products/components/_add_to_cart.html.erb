@@ -1,0 +1,43 @@
+<div
+  data-controller="add-to-cart"
+  data-add-to-cart-product-value="<%= product.to_json %>"
+
+  class="flex flex-col gap-2">
+  <% if product.stocks.any? %>
+    <div class="select-size-container flex gap-1 w-full items-center">
+      <% product.stocks.each do |stock| %>
+        <div
+          data-action="click->add-to-cart#selectSize"
+          data-size="<%= stock.size %>"
+          data-stock-id="<%= stock.id %>"
+          class="select-size flex py-1 px-2 rounded-[5px] items-center bg-gray-300 hover:bg-gray-500"> <%= stock.size %> </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="select-size-container flex gap-1 w-full items-center">
+    <input
+      data-action="change->add-to-cart#quantityInput keyup->add-to-cart#quantityInput"
+      class="select-size flex border py-1 px-2 rounded-[5px] items-center"
+      type="number" min="0" value="0">
+    </input>
+
+  </div>
+
+  <!--  Target-area-->
+  <div
+    data-add-to-cart-target ="selectedSize"
+    class="block text-amber-600 my-2">
+    Selected size: </div>
+
+  <div
+    data-add-to-cart-target ="inputQuantity"
+    class="block text-amber-600 my-2">
+    Quantity: </div>
+
+  <button
+    data-action="click->add-to-cart#addToCart"
+    data-add-to-cart-target="addToCartButton"
+    class = "btn bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed">
+    Add to Cart </button>
+</div>

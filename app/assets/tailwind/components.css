@@ -1,27 +1,63 @@
 @layer components {
   .btn {
-    @apply rounded-[3px]
-    mb-2.5!
-    bg-blue-600
-    text-lg
-    sm:text-lg
-    px-4
-    py-2
-    font-semibold
-    text-white;
+    @apply w-auto
+    inline-flex
+    px-5 py-2
+    text-white
+    font-medium
+    rounded-md
+    transition
+    cursor-pointer
   }
 
   .btn-primary {
-    @apply w-full
-      block
-      text-center
-      cursor-pointer
-      font-medium
-      transition
+    @apply bg-blue-600
     hover:bg-blue-700
-      focus:outline-none
-      focus:ring-4
-      focus:ring-blue-200
-      active:scale-[0.99];
+  }
+
+  .btn-warning {
+    @apply bg-amber-600
+    hover:bg-amber-700
+  }
+
+
+  .btn-danger {
+    @apply bg-red-600
+    hover:bg-red-700
+  }
+
+  .dashboard-container {
+    @apply flex
+    justify-between
+    flex-wrap
+    mt-8
+    w-full
+    items-center
+    max-w-4xl
+  }
+
+  .dashboard-item {
+    @apply w-[200px]
+    rounded
+    overflow-hidden
+    shadow-lg
+    bg-gradient-to-r
+    from-red-500
+    to-red-400
+  }
+
+  .input-field {
+    @apply w-full
+    rounded-[5px]
+    border-[1px]
+    border-gray-500
+    px-2 py-2
+    text-gray-900
+    outline-none
+    transition
+    placeholder:text-gray-500
+    focus:border-blue-500
+    focus:ring-4
+    focus:ring-blue-100
   }
 }

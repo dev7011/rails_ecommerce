@@ -1,0 +1,61 @@
+<%= form_with(model: [:admin, admin_order], class: "contents") do |form| %>
+  <%= render "shared/errors_form", record: admin_order %>
+
+  <% if admin_order.errors.empty? %>
+    <div class="my-5">
+      <%= form.label :name %>
+      <%= form.text_field :address, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :Email %>
+      <%= form.email_field :customer_email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+  <% end %>
+
+  <h2 class="text-2xl text-bold mb-[5px]">Product List</h2>
+
+  <%= form.fields_for :order_items do |item_form| %>
+    <div class="order-item my-5">
+      <div>
+        <%= item_form.label :product_id, "Produkt" %>
+        <%= item_form.collection_select(
+              :product_id,
+              Product.all,
+              :id,
+              :name,
+              { prompt: "Produkt auswählen" },
+              class:"utility_field"
+            ) %>
+      </div>
+
+      <div class="mt-4">
+        <%= item_form.label :quantity, "Menge" %>
+
+        <%= item_form.number_field(
+              :quantity,
+              min: 1,
+              value: item_form.object.quantity || 1,
+              class: "utility_field"
+            ) %>
+      </div>
+
+      <div class="mt-4 flex flex-col">
+        <%= item_form.label :unit_price, "Preis" %>
+        <%= item_form.text_field :unit_price,
+            class: "utility_field w-[100px] shadow rounded-md" %>
+      </div>
+
+      <div class="mt-4 flex flex-col">
+        <%= item_form.label :subtotal, "subtotal" %>
+        <%= item_form.text_field :subtotal,
+            class: "utility_field w-[100px] shadow rounded-md" %>
+      </div>
+
+    </div>
+  <% end %>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

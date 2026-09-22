@@ -1,0 +1,9 @@
+<% if images.any? %>
+  <div class="grid grid-cols-6 gap-4">
+    <% images.each do |image| %>
+      <div class="inline-flex">
+      <%= image_tag image, class: "w-20 h-20 object-cover rounded-md" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

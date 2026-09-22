@@ -2,3 +2,8 @@
 
 @import "./components.css";
 @import "./utilities.css";
+
+.container {
+  @apply mx-auto
+  min-h-screen
+}

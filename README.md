@@ -26,3 +26,21 @@
         before_action :authenticate_user!
     👉 in config/environments/development.rb
         config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+♦️ MODEL CATEGORY hinzufügen
+
+    rails g scaffold admin::category name:string description:text
+    👉 tabelle admin_categories in categories umbenennen
+
+♦️ Active Storage (https://guides.rubyonrails.org/active_storage_overview.html)   
+    
+    rails active_storage:install
+    rails db:migrate
+    👉 in app/models/admin/category.rb
+        has_one_attached :image
+    👉 in config/environments/development.rb
+        config.active_storage.service = :local
+    👉 in config/environments/production.rb
+        config.active_storage.service = :amazon
+    
