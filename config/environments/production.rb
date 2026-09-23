@@ -51,10 +51,9 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = false
 
-  # Giới hạn giữ lại tối đa 5 file log, mỗi file tối đa 100MB
-  config.logger = ActiveSupport::Logger.new(Rails.root.join("log", "#{Rails.env}.log"), 5, 100.megabytes)
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+  config.logger = ActiveSupport::TaggedLogging.new(
+    ActiveSupport::Logger.new($stdout)
+  )
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
